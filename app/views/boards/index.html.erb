@@ -1,0 +1,36 @@
+<nav class="ui olive menu">
+<%= link_to boards_path do %>
+<div class="olive borderless olive item">
+  <strong><h2 class="ui olive header">Trollo</h2></strong>
+  </div>
+  <% end %>
+  
+  <div class="olive inverted right menu">
+    <% if current_user %>
+    <%= link_to new_user_board_path(current_user), class: "borderless item" do%>
+<h4><i class="plus olive icon"></i></h4>
+    <% end%>
+      <%= link_to destroy_user_session_path, method: :delete, class: "borderless item" do %>
+<h4 class="ui olive center aligned header">Log Out<h4>
+      <% end%>
+    <% else %>
+      <%= link_to "Register", new_user_registration_path, class: "item" %>
+      <%= link_to "Login", new_user_session_path, class: "item" %>
+    <% end %>
+  </div>
+</nav>
+
+
+<div class="ui center aligned cards">
+  <% @boards.each do |board| %>
+  <div class="card">
+    <div class="content">
+      <div class="header">
+  
+      <%= link_to board.name, board_path(board) %>
+      </div>
+      <%= link_to "Remove", board_path(board), method: :delete %>
+    </div>
+  </div>
+  <% end%>
+</div>

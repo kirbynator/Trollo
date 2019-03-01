@@ -1,0 +1,35 @@
+<nav class="ui olive menu">
+<%= link_to boards_path do %>
+<div class="olive borderless olive item">
+  <strong><h2 class="ui olive header">Trollo</h2></strong>
+  </div>
+  <% end %>
+  <div class="ui right olive inverted menu">
+  <div class="olive item" >
+<h2> <%= @board.name %> </h2>
+</div>
+  </div>
+  <div class="olive inverted right menu">
+    <% if current_user %>
+    <%= link_to new_user_board_path(@board), class: "borderless item" do%>
+<h4><i class="plus olive icon"></i></h4>
+    <% end%>
+      <%= link_to destroy_user_session_path, method: :delete, class: "borderless item" do %>
+<h4 class="ui olive center aligned header">Log Out<h4>
+      <% end%>
+    <% else %>
+      <%= link_to "Register", new_user_registration_path, class: "item" %>
+      <%= link_to "Login", new_user_session_path, class: "item" %>
+    <% end %>
+  </div>
+</nav>
+
+<h1 class="ui olive center aligned header">Create A New List</h1>
+<%= form_with(model: [@board, @list], local: true, class: "ui form") do |f| %>
+  <div class="field">
+    <%= f.text_field :name, autofocus: true, class: "middle input" %>
+  </div>
+ <div class="ui olive center aligned header">
+ <%= f.submit nil, class: "ui olive button" %>
+ </div>
+<% end %>

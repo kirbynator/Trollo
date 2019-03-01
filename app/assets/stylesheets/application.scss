@@ -1,0 +1,13 @@
+@import "semantic-ui";
+body{
+  background-color: rgb(255, 228, 196);
+  background-image: asset-data-url("mountain1.png");
+  height: 100%; 
+  width: 100%;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+.middle{
+  text-align: center;
+}
