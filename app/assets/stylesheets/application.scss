@@ -1,6 +1,6 @@
 @import "semantic-ui";
 body{
-  background-color: rgb(255, 228, 196);
+  background-color: rgba(195, 215, 230, 0.911);
   background-image: asset-data-url("mountain1.png");
   height: 100%; 
   width: 100%;
@@ -10,4 +10,28 @@ background-size: cover;
 }
 .middle{
   text-align: center;
+}
+.bottom{
+  padding-bottom: 1%;
+}
+.top{
+  padding-top: 10px;
+  margin-top: 10px;
+  border-top: 10px;
+}
+.white{
+  color: #ffff;
+}
+.opi{
+  opacity: 0.8;
+  color: #ffff;
+}
+.opi .text{
+  opacity: 1;
+}
+.box{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
 }

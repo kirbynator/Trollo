@@ -1,21 +1,3 @@
-<nav class="ui olive menu">
-<%= link_to boards_path do %>
-<div class="olive borderless olive item">
-  <strong><h2 class="ui olive header">Trollo</h2></strong>
-  </div>
-  <% end %>
-  
-  <div class="olive inverted right menu">
-    <% if current_user %>
-      <%= link_to destroy_user_session_path, method: :delete, class: "borderless item" do %>
-<h4 class="ui olive center aligned header">Log Out<h4>
-      <% end%>
-    <% else %>
-      <%= link_to "Register", new_user_registration_path, class: "item" %>
-      <%= link_to "Login", new_user_session_path, class: "item" %>
-    <% end %>
-  </div>
-</nav>
 
 <h1 class="ui olive center aligned header">Create A New Board</h1>
 <%= form_with(model: @board, local: true, class: "ui form") do |f| %>

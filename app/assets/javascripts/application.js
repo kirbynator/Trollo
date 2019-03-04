@@ -13,3 +13,4 @@
 //= require rails-ujs
 //= require activestorage
 //= require_tree .
+document.getElementById("urText").innerHTML = "Your choice was";

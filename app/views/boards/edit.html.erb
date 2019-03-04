@@ -1,2 +1,11 @@
-<h1>Boards#edit</h1>
-<p>Find me in app/views/boards/edit.html.erb</p>
+
+<h1 class="ui olive center aligned header">Rename <%= @board.name %> Board</h1>
+<%= form_with(model: @board, local: true, class: "ui form") do |f| %>
+  <div class="field">
+    <%= f.text_field :name, class: "middle olive input", autofocus: true %>
+  </div>
+ <div class="ui center aligned header">
+ <%= f.submit nil, class: "ui olive button" %>
+ <%= link_to "Delete", user_board_path(@board), method: :delete, class: "ui red button" %>
+ </div>
+<% end %>

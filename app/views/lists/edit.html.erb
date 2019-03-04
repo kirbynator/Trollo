@@ -1,2 +1,10 @@
-<h1>Lists#edit</h1>
-<p>Find me in app/views/lists/edit.html.erb</p>
+<h1 class="ui olive center aligned header">Rename <%= @list.name %> List</h1>
+<%= form_with(model: [@board, @list], local: true, class: "ui form") do |f| %>
+  <div class="field">
+    <%= f.text_field :name, class: "middle olive input", autofocus: true %>
+  </div>
+ <div class="ui center aligned header">
+ <%= f.submit nil, class: "ui olive button" %>
+ <%= link_to "Delete", board_list_path(@board, @list), method: :delete, class: "ui red button" %>
+ </div>
+<% end %>

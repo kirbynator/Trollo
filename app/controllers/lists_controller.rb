@@ -25,7 +25,12 @@ class ListsController < ApplicationController
   end
 
   def update
+    if @list.update(the_params)
+      redirect_to @board
+    else 
+      render :edit
   end
+end
 
   def destroy
     @list.destroy
@@ -42,7 +47,6 @@ class ListsController < ApplicationController
   end
 
   def set_list
-    binding.pry
     @list = List.find(params[:id])
   end
 end

@@ -24,7 +24,12 @@ class BoardsController < ApplicationController
   end
 
   def update
+    if @board.update(the_params)
+      redirect_to boards_path
+    else 
+      render :edit
   end
+end
 
   def destroy
     @board.destroy
